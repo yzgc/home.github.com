@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[前端面试总结]]></title>
+      <url>/home.github.com/2017/11/08/first/</url>
+      <content type="html"><![CDATA[<h2 id="javascript部分"><a href="#javascript部分" class="headerlink" title="javascript部分"></a>javascript部分</h2><h3 id="1-那些问题会引起内存泄露"><a href="#1-那些问题会引起内存泄露" class="headerlink" title="1.那些问题会引起内存泄露"></a>1.那些问题会引起内存泄露</h3><ul>
+<li>不可控的全局变量</li>
+<li>闭包</li>
+<li>dom删除，但事件未移除</li>
+<li>被引用了子元素</li>
+<li>定时器未清除</li>
+</ul>
+<h3 id="2-ajax实现"><a href="#2-ajax实现" class="headerlink" title="2.ajax实现"></a>2.ajax实现</h3><ul>
+<li>通过实例化一个XMLHttpRequest对象得到一个实例</li>
+<li>调用open（method，URL，boolean）方法; 参数分别为http方法，，地址，是否异步，通常为true</li>
+<li>调用send方法，发送报文主体</li>
+<li>监听readystatechange事件，通过这个实例的readystate来判断ajax的状态，🈶️分为0，1，2，3，4这几种状态，当为4时，接受完成</li>
+<li>在判断实例的status状态，当为200时请求成功<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var xhr = new XMLHttpRequest();</span><br><span class="line">xhr.open(<span class="string">'get'</span>, <span class="string">'pre.lly800com'</span>, <span class="literal">true</span>);</span><br><span class="line">xhr.send(null);</span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    <span class="keyword">if</span> (xhr.readystate === 4) &#123;</span><br><span class="line">        <span class="keyword">if</span> (shr.status == 200) &#123;</span><br><span class="line">            console.log(xhr.response);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="简要介绍es6"><a href="#简要介绍es6" class="headerlink" title="简要介绍es6"></a>简要介绍es6</h3><ul>
+<li>在变量的声明和定义方面增加了let、const声明变量，有局部变量的概念</li>
+<li>ES6对字符串、 数组、正则、对象、函数等拓展了一些方法，如字符串方面的模板字符串、函数方面的默认参数、对象方面属性的简洁表达方式</li>
+<li>为解决异步回调问题，引入了promise和 generator</li>
+<li>实现了class和模块</li>
+</ul>
+<h3 id="js严格模式不同"><a href="#js严格模式不同" class="headerlink" title="js严格模式不同"></a>js严格模式不同</h3><ul>
+<li>不允许使用var创建全局变量</li>
+<li>不允许对变量使用delate操作符，只读属性不能赋值</li>
+<li>属性名唯一</li>
+<li>函数参数不能重名，不可再if内部声明函数</li>
+<li>抛弃with 语句</li>
+</ul>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>/home.github.com/2017/11/07/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[主题二]]></title>
+      <url>/home.github.com/2017/09/13/second/</url>
+      <content type="html"><![CDATA[<h3 id="我是本期内容二"><a href="#我是本期内容二" class="headerlink" title="我是本期内容二"></a>我是本期内容二</h3>]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[typeScript详解]]></title>
+      <url>/home.github.com/2017/09/13/ts/</url>
+      <content type="html"><![CDATA[<h3 id="博客三期"><a href="#博客三期" class="headerlink" title="博客三期"></a>博客三期</h3>]]></content>
+      
+        
+    </entry>
+    
+  
+  
+</search>
